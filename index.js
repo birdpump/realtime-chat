@@ -38,6 +38,6 @@ io.on('connection', (socket) => {
 
 
 
-server.listen(80, () => {
-    console.log('listening on *:80');
+server.listen(3000, '192.168.0.3' () => {
+    console.log('listening on :80');
 });
