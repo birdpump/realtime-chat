@@ -37,4 +37,4 @@ io.on('connection', (socket) => {
 });
 
 
-server.listen(3000, '192.168.0.3');
+server.listen(80, '45.79.96.40');
