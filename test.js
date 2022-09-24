@@ -1,29 +1,11 @@
-// Requiring users file
-const datas = require("./data");
+const fs = require('fs');
+const fileName = './test.json';
+const file = require(fileName);
 
+file.key = "new value";
 
-for (let i = 0; i < datas.length; i++) {
-    console.log(datas[i].msg);
-    console.log(datas[i].user);
-}
-
-
-
-
-const fs = require("fs");
-
-//writing
-// STEP 1: Reading JSON file
-
-
-// Defining new user
-let msgdata = {
-    msg: "Hello",
-    user: "allah",
-};
-
-// STEP 2: Adding new data to users object
-datas.push(msgdata);
-
-// STEP 3: Writing to a file
-fs.writeFile("data.json", JSON.stringify(datas), err => { });
+fs.writeFile(fileName, JSON.stringify(file), function writeJSON(err) {
+  if (err) return console.log(err);
+  console.log(JSON.stringify(file));
+  console.log('writing to ' + fileName);
+});
